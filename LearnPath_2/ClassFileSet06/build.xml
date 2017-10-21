@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copydir" default="jar" basedir="."> 
+	
+	<property name="classes.dir" value="."/>
+	
+	<target name="jar">
+		<jar destfile="minimal.jar">
+			<fileset refid="reqdClasses"/>
+		</jar>
+	</target>
+
+    <classfileset id="reqdClasses" dir="${classes.dir}">
+      <rootfileset dir="${classes.dir}/1" includes="*.class"/>
+    </classfileset>
+
+</project> 

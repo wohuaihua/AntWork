@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copydir" default="jarCmd" basedir="."> 
+		<property name="src" value="D:/test"/>
+		<target name="jarCmd">
+		<exec executable="cmd">
+			<arg value="/c"/>
+			<arg value="jar -cvf 1.jar @1.txt"/>
+		</exec>
+	</target>
+</project> 

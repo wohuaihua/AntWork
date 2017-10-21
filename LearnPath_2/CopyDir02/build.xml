@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copydir" default="copy" basedir="."> 
+		<property name="src" value="D:/test"/>
+		<property name="dest" value="dest"/>
+		<target name="copy">
+			<copy todir="./${dest}">
+				<fileset dir="${src}/"/>
+			</copy>
+		</target>
+</project> 

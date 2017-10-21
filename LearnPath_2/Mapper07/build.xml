@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="mapper" default="say" basedir="."> 
+		
+		<path id="src">
+			<pathelement location="D:\临时文件夹\vue.js"/>
+			<pathelement location="D:\临时文件夹\31301.zip"/>
+		</path>
+		
+		
+		<!--
+		<pathconvert property="x">
+			<path refid="src"/>
+			<mapper type="flatten"/>
+		</pathconvert>
+		-->
+		
+		<!--
+		<pathconvert property="x">
+			<path refid="src"/>
+			<mapper type="merge" to="huaihua.txt"/>
+		</pathconvert>
+		-->
+		
+		<!--只输出已经转换的-->
+		<!--
+		<pathconvert property="x">
+			<path refid="src"/>
+			<mapper type="glob" from="*.js" to="*.js.bak"/>
+		</pathconvert>
+		-->
+		
+		
+		<pathconvert property="x">
+			<path refid="src"/>
+			<mapper type="regexp" from="^(.*)\.js$$" to="\1.java.bak"/>
+		</pathconvert>
+		
+		
+		<target name="say" >
+			<echo>${x}</echo>
+		</target>
+		
+		
+</project> 

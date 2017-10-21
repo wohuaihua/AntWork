@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ant_firsttest" default="build-module-A" basedir="."> 
+		<property name="module-A-present" value="asd"/>
+		<target name="build-module-A" if="module-A-present">
+			<echo>module-A-present</echo>
+		</target>
+</project> 

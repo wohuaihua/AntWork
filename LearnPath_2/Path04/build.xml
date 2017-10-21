@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="path" default="say" basedir="."> 
+		<property name="" value=""/>
+		
+		<path id="projectLib">
+			<pathelement location="./test/1.txt"/>
+			<pathelement location="./test/2.txt"/>
+		</path>
+		
+		<target name="say">
+			<echo>${toString:projectLib}</echo>
+		</target>
+</project> 

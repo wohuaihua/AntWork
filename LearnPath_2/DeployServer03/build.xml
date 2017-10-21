@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="deployServer" default="startTomcat" basedir=".">
+ 
+	<property environment="env"/>
+	<target name="help">
+		<exec executable="cmd">
+			<arg value="/c"/>
+			<arg value="ant.bat"/>
+			<arg value="-p"/>
+		</exec>
+	</target>
+	
+	<target name="sayenv">
+		<echo>${env.Path}</echo>
+	</target>
+	
+	<target name="startTomcat">
+		<exec executable="cmd" dir="${env.TOMCAT}/bin">
+			<arg value="/c"/>
+			<arg value="startup.bat"/>
+		</exec>
+	</target>
+</project> 
