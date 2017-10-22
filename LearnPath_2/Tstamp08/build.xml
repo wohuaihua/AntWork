@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="tstamp" default="say" basedir="."> 
+		<property name="" value=""/>
+		
+		<target name="say1">
+			<!--要用时间戳，需要引用tstamp任务-->
+			<tstamp/>
+			<echo>${DSTAMP}</echo>
+			<echo>${TSTAMP}</echo>
+			<echo>${TODAY}</echo>
+		</target>
+		
+		<target name="say2">
+			<!--要用时间戳，需要引用tstamp任务-->
+			<tstamp>
+				<format property="today" pattern="MM/dd/yyyy hh:mm aa"/>
+			</tstamp>
+			<echo>${today}</echo>
+		</target>
+		
+		<target name="say3">
+			<tstamp>
+				<format property="touch.time" pattern="MM/dd/yyyy hh:mm aa"
+				  offset="-5" unit="hour"/>
+			</tstamp>
+			<echo>${touch.time}</echo>
+		</target>
+		
+		<target name="say">
+			<tstamp prefix="start"/>
+			<echo>${start.DSTAMP}</echo>
+			<echo>${start.TSTAMP}</echo>
+			<echo>${start.TODAY}</echo>
+		</target>
+</project> 
