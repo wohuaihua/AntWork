@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="property" default="say" basedir="."> 
+		
+		
+		<property name="message" value="Hello world"/>
+
+    
+		<target name="say">
+			<script language="groovy">
+				println("message is " + message)
+			</script>
+		</target>
+		
+</project> 
