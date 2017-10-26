@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="copydir" default="jarCmd" basedir="."> 
+		<property file="info.properties"/>
+		
+		<target name="jarCmd">
+		
+		
+		<!--<pathconvert property="target">
+			<path>
+				 <pathelement path="${src}"/>
+			</path>
+			<filtermapper>
+				<replacestring from="txt" to="txt1"/>
+			</filtermapper>
+		</pathconvert>-->
+		
+		<echo>${location}</echo>
+		
+		
+		<exec executable="cmd" dir="${location}">
+			<arg value="/c"/>
+			<arg value="jar -cvf ${output}\1.jar @${txt}"/>
+		</exec>
+		<mkdir dir="${output}/dest"/>
+		<unzip src="${output}/1.jar" dest="${output}/dest"/>
+	</target>
+</project> 
