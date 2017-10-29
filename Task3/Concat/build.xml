@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="concat" default="concat" basedir="."> 
+	
+	<target name="concat">
+		<!--	-->
+		<!--生成一个文件，文件名为README，文件内容为Hello, World!	-->
+		<!--<concat destfile="README">Hello, World!</concat>-->
+		
+		<!--将所有文件内容在控制台输出，没有空格	-->
+		<concat>
+			<fileset dir="messages" includes="**/*"/>
+		</concat>
+		
+		<!--将note.txt内容添加到README文件内，如果README文件存在，不存在会报错	-->
+		<concat destfile="README" append="true">
+			<filelist dir="notes" files="note.txt"/>
+		</concat>
+		
+		
+		<!--如果${docbook.dir}/1.txt比2.txt,3.txt更老，则将2.txt,3.txt内容加入的1.txt	-->
+		<property name="docbook.dir" value="old/"/>
+		<concat destfile="${docbook.dir}/1.txt" force="no">
+			<filelist dir="${docbook.dir}" files="2.txt,3.txt"/>
+			<!--<fileset dir="${docbook.dir}" includes="sections/*.xml" excludes="introduction.xml,overview.xml"/>-->
+		</concat>
+	</target>
+</project> 
